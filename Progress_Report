@@ -1,0 +1,4 @@
+EPWM 2 now starts conversion
+SoC is set to the rising edge of the EPWM2
+EPWM 1 serves as a reference for synchronization
+EPWM 2 can now shift in phase with reference to EPWM 1
