@@ -159,6 +159,7 @@ void main(void)
     // PLL, WatchDog, enable Peripheral Clocks
     // This example function is found in the DSP2833x_SysCtrl.c file.
     //
+
     InitSysCtrl();
     Gpio_select();
 
