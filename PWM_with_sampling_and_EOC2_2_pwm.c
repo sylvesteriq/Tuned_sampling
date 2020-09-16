@@ -1,4 +1,3 @@
-
 #include "header.h"
 
 void main(void)
@@ -8,8 +7,6 @@ void main(void)
                         //This example function is found in the DSP2833x_SysCtrl.c file
 
     Gpio_select();      //select gpios which will be used as flags to indicate EoC
-
-
 
     //
     // Set up ADC clock
@@ -78,7 +75,6 @@ void main(void)
 
     InitAdc();  // For this example, init the ADC
 
-
     //
     // For this example, only initialize the ePWM
     //
@@ -92,7 +88,6 @@ void main(void)
     EALLOW;
     SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 1;
     EDIS;
-
 
     //
     // Enable CPU INT3 which is connected to EPWM1-3 INT
@@ -112,9 +107,6 @@ void main(void)
     EINT;   // Enable Global interrupt INTM
     ERTM;   // Enable Global realtime interrupt DBGM
 
-
-
-
     //
     // Enable ADCINT in PIE
     //
@@ -124,45 +116,26 @@ void main(void)
                /// can enable interrupt on ePWM 1
                PieCtrlRegs.PIEIER3.bit.INTx1; // see PIE table in report
 
-
-
     IER |= M_INT1;      // Enable CPU Interrupt 1
     EINT;               // Enable Global interrupt INTM
     ERTM;               // Enable Global realtime interrupt DBGM
 
-    LoopCount = 0;
-    ConversionCount = 0;
-
-
-
-
-
-
-
-
-
-
     //
     // Configure ADC
     //
+
     AdcRegs.ADCMAXCONV.all = 0x0001;       // Setup 2 conv's on SEQ1
     AdcRegs.ADCCHSELSEQ1.bit.CONV01 = 0x2; // Setup ADCINA2 as 1st SEQ1 conv.
-    
+
+
     //
     // Enable SOCA from ePWM to start SEQ1
     //
+
     AdcRegs.ADCTRL2.bit.EPWM_SOCA_SEQ1 = 1;
     AdcRegs.ADCTRL2.bit.INT_ENA_SEQ1 = 1;  // Enable SEQ1 interrupt (every EOS)
 
-    /* The code below sets up a link from EPWM to ADC
-     *
-     */
-
-    //
-    // Assumes ePWM1 clock is already enabled in InitSysCtrl();
-    //
-
-            // Note: ePWM1 is GPIO0
+    // Note: ePWM1 is GPIO0
 
     //
     // Wait for ADC interrupt
