@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v18.12.2                    
 ******************************************************************************
->> Linked Wed Sep 16 11:33:20 2020
+>> Linked Wed Sep 16 14:59:56 2020
 
 OUTPUT FILE NAME:   <Example_2833xAdcSoc.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00000000
@@ -588,9 +588,9 @@ abs   ffffffff  .text
 0     0000900a  _INT14_ISR                      
 0     00009755  _InitAdc                        
 0     00009511  _InitEPwm                       
-0     0000936f  _InitEPwm1Example               
+0     00009370  _InitEPwm1Example               
 0     0000951f  _InitEPwm1Gpio                  
-0     000093b7  _InitEPwm2Example               
+0     000093b8  _InitEPwm2Example               
 0     00009531  _InitEPwm2Gpio                  
 0     00009543  _InitEPwm3Gpio                  
 0     00009557  _InitEPwm4Gpio                  
@@ -693,7 +693,7 @@ abs   ffffffff  ___text__
 0     0000968c  _exit                           
 0     00009316  _main                           
 0     0000971f  _memcpy                         
-0     000093b3  _return_frequency               
+0     000093b4  _return_frequency               
 0     0000930c  _rsvd_ISR                       
 0     00009403  _update_compare                 
 1     0000c003  _value                          
@@ -792,9 +792,9 @@ page  address   name
 0     00009302  _PIE_RESERVED                   
 0     0000930c  _rsvd_ISR                       
 0     00009316  _main                           
-0     0000936f  _InitEPwm1Example               
-0     000093b3  _return_frequency               
-0     000093b7  _InitEPwm2Example               
+0     00009370  _InitEPwm1Example               
+0     000093b4  _return_frequency               
+0     000093b8  _InitEPwm2Example               
 0     00009403  _update_compare                 
 0     0000940f  _Gpio_select                    
 0     00009419  _InitSysCtrl                    

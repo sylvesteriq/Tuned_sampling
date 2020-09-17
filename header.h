@@ -74,7 +74,7 @@ typedef struct
 //
 // Function Prototypes
 //
-void InitEPwm1Example(void);
+void InitEPwm1Example();
 void InitEPwm2Example();
 __interrupt void epwm1_isr(void);
 
@@ -92,9 +92,9 @@ void Gpio_select(void); // function to select GPIO, user added
 //
 // Defines that configure the period for each timer
 //
-#define EPWM1_TIMER_TBPRD  12000  // Period register // Defines frequency as 12.5Khz with current implementation
+#define EPWM1_TIMER_TBPRD  937  // Period register // Defines frequency as 80,042 Hz with current implementation
 
-#define EPWM2_TIMER_TBPRD  3000
+#define EPWM2_TIMER_TBPRD  EPWM1_TIMER_TBPRD/4
 
 //
 // Defines that keep track of which way the compare value is moving

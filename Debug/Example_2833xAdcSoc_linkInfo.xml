@@ -2,7 +2,7 @@
 <link_info>
    <banner>TMS320C2000 Linker PC v18.12.2.LTS</banner>
    <copyright>Copyright (c) 1996-2018 Texas Instruments Incorporated</copyright>
-   <link_time>0x5f616b60</link_time>
+   <link_time>0x5f619bcc</link_time>
    <link_errors>0x0</link_errors>
    <output_file>Example_2833xAdcSoc.out</output_file>
    <entry_point>
@@ -764,62 +764,62 @@
          <name>.debug_line</name>
          <load_address>0xe98</load_address>
          <run_address>0xe98</run_address>
-         <size>0x18b</size>
+         <size>0x190</size>
          <input_file_ref idref="fl-e"/>
       </object_component>
       <object_component id="oc-ba">
          <name>.debug_line</name>
-         <load_address>0x1023</load_address>
-         <run_address>0x1023</run_address>
+         <load_address>0x1028</load_address>
+         <run_address>0x1028</run_address>
          <size>0x7e</size>
          <input_file_ref idref="fl-18"/>
       </object_component>
       <object_component id="oc-bf">
          <name>.debug_line</name>
-         <load_address>0x10a1</load_address>
-         <run_address>0x10a1</run_address>
+         <load_address>0x10a6</load_address>
+         <run_address>0x10a6</run_address>
          <size>0x55</size>
          <input_file_ref idref="fl-19"/>
       </object_component>
       <object_component id="oc-c4">
          <name>.debug_line</name>
-         <load_address>0x10f6</load_address>
-         <run_address>0x10f6</run_address>
+         <load_address>0x10fb</load_address>
+         <run_address>0x10fb</run_address>
          <size>0x3a</size>
          <input_file_ref idref="fl-1a"/>
       </object_component>
       <object_component id="oc-c9">
          <name>.debug_line</name>
-         <load_address>0x1130</load_address>
-         <run_address>0x1130</run_address>
+         <load_address>0x1135</load_address>
+         <run_address>0x1135</run_address>
          <size>0x3e</size>
          <input_file_ref idref="fl-1b"/>
       </object_component>
       <object_component id="oc-ce">
          <name>.debug_line</name>
-         <load_address>0x116e</load_address>
-         <run_address>0x116e</run_address>
+         <load_address>0x1173</load_address>
+         <run_address>0x1173</run_address>
          <size>0x50</size>
          <input_file_ref idref="fl-1c"/>
       </object_component>
       <object_component id="oc-d5">
          <name>.debug_line</name>
-         <load_address>0x11be</load_address>
-         <run_address>0x11be</run_address>
+         <load_address>0x11c3</load_address>
+         <run_address>0x11c3</run_address>
          <size>0x65</size>
          <input_file_ref idref="fl-1d"/>
       </object_component>
       <object_component id="oc-da">
          <name>.debug_line</name>
-         <load_address>0x1223</load_address>
-         <run_address>0x1223</run_address>
+         <load_address>0x1228</load_address>
+         <run_address>0x1228</run_address>
          <size>0x5e</size>
          <input_file_ref idref="fl-1e"/>
       </object_component>
       <object_component id="oc-df">
          <name>.debug_line</name>
-         <load_address>0x1281</load_address>
-         <run_address>0x1281</run_address>
+         <load_address>0x1286</load_address>
+         <run_address>0x1286</run_address>
          <size>0x62</size>
          <input_file_ref idref="fl-1f"/>
       </object_component>
@@ -1936,7 +1936,7 @@
          <name>.debug_line</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x12e3</size>
+         <size>0x12e8</size>
          <contents>
             <object_component_ref idref="oc-4e"/>
             <object_component_ref idref="oc-54"/>
@@ -4080,7 +4080,7 @@
       </symbol>
       <symbol id="sm-286">
          <name>_InitEPwm2Example</name>
-         <value>0x93b7</value>
+         <value>0x93b8</value>
          <object_component_ref idref="oc-e2"/>
       </symbol>
       <symbol id="sm-287">
@@ -4090,7 +4090,7 @@
       </symbol>
       <symbol id="sm-288">
          <name>_return_frequency</name>
-         <value>0x93b3</value>
+         <value>0x93b4</value>
          <object_component_ref idref="oc-e2"/>
       </symbol>
       <symbol id="sm-289">
@@ -4120,7 +4120,7 @@
       </symbol>
       <symbol id="sm-28e">
          <name>_InitEPwm1Example</name>
-         <value>0x936f</value>
+         <value>0x9370</value>
          <object_component_ref idref="oc-e2"/>
       </symbol>
       <symbol id="sm-2a9">

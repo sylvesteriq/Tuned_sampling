@@ -79,7 +79,6 @@ __interrupt void
 // PieCtrlRegs.PIEACK.all = PIEACK_GROUP3;
 //}
 
-
 void   InitEPwm1Example()
                         {
     //
@@ -93,24 +92,10 @@ void   InitEPwm1Example()
     EPwm1Regs.TBCTL.bit.PHSEN = TB_ENABLE;    // Disable phase loading
     EPwm1Regs.TBPHS.half.TBPHS = 0;       // Phase is 0
     EPwm1Regs.TBCTR = 0x0000;                  // Clear counter
-    //EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV2;   // Clock ratio to SYSCLKOUT //SYSCLKOUT/2
-    //EPwm1Regs.TBCTL.bit.CLKDIV = TB_DIV2;
 
     EPwm1Regs.TBCTL.bit.SYNCOSEL = TB_CTR_ZERO; //An attempt to implement synchronization
 
     //intialize part of the ADC code
-
-//EPWM 2 will now be used to start conversion
-
-//    EPwm1Regs.ETSEL.bit.SOCAEN = 1;     // Enable SOC on A group
-//    EPwm1Regs.ETSEL.bit.SOCASEL = 4;    // Select SOC from from CPMA on upcount
-//    EPwm1Regs.ETPS.bit.SOCAPRD = 1;     // Generate pulse on 1st event
-
-    // already declared above
-
-    //    EPwm1Regs.CMPA.half.CMPA = 0x0080;    // Set compare A value
-    //    EPwm1Regs.TBPRD = 0xFFFF;           // Set period for ePWM1 // 0xFFFF is 65535
-    //
 
     //
     // Setup shadow register load on ZERO
@@ -172,7 +157,7 @@ void InitEPwm2Example(int Soc_position)
     //EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP; // Count up
     EPwm2Regs.TBPRD = EPWM2_TIMER_TBPRD;       // Set timer period
     EPwm2Regs.TBCTL.bit.PHSEN = TB_ENABLE;    // Disable phase loading
-    EPwm2Regs.TBPHS.half.TBPHS = 1500;       // Phase is 0
+    EPwm2Regs.TBPHS.half.TBPHS = 0;       // Phase is 0
     EPwm2Regs.TBCTR = 0x0000;                  // Clear counter
 
     EPwm2Regs.TBCTL.bit.SYNCOSEL = TB_SYNC_IN; // sync flow-through
@@ -235,9 +220,6 @@ void InitEPwm2Example(int Soc_position)
     epwm2_info.EPwmMaxCMPB = EPWM2_TIMER_TBPRD;
     epwm2_info.EPwmMinCMPB = 0;
     }
-
-
-
 
       //
       // update_compare -
