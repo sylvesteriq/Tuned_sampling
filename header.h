@@ -90,7 +90,13 @@ void Gpio_select(void); // function to select GPIO, user added
 // Globals
 //
  EPWM_INFO epwm1_info;
- EPWM_INFO epwm2_info;
+
+ EPWM_INFO epwm3_info;
+ EPWM_INFO epwm4_info;
+ EPWM_INFO epwm5_info;
+
+ // epwm_2 will not be changed as this is our sampling PWM
+ //EPWM_INFO epwm2_info;
 
 //
 // Defines that configure the period for each timer
@@ -98,7 +104,6 @@ void Gpio_select(void); // function to select GPIO, user added
 #define EPWM1_TIMER_TBPRD  938  // Period register // Defines frequency as 80,042 Hz with current implementation
 
 #define EPWM2_TIMER_TBPRD  EPWM1_TIMER_TBPRD/4
-
 
 #define PWM_DEAD_BAND 20
 //
