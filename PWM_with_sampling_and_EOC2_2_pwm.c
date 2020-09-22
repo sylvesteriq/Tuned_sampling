@@ -85,6 +85,8 @@ void main(void)
 
     InitEPwm2Example(set_SoC_at_falling_edge);
 
+    InitEPwm3Example();
+
     EALLOW;
     SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 1;
     EDIS;
