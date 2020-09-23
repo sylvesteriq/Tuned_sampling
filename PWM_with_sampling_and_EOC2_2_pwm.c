@@ -24,7 +24,9 @@ void main(void)
     #endif
     EDIS;
 
-    InitEPwmGpio();
+    InitEPwmGpio();     // Make PWM visible on EPWM
+    InitEPwm4Gpio();
+    InitEPwm5Gpio();
 
     //
     // Define ADCCLK clock frequency ( less than or equal to 25 MHz )
@@ -86,6 +88,10 @@ void main(void)
     InitEPwm2Example(set_SoC_at_falling_edge);
 
     InitEPwm3Example();
+
+    InitEPwm4Example();
+
+    InitEPwm5Example();
 
     EALLOW;
     SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 1;
