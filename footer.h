@@ -71,7 +71,7 @@ void InitEPwm1Example()
 
     EPwm1Regs.TBCTL.bit.SYNCOSEL = TB_CTR_ZERO; //An attempt to implement synchronization
 
-    //intialize part of the ADC code
+    //initialize part of the ADC code
 
     //
     // Setup shadow register load on ZERO
@@ -85,7 +85,7 @@ void InitEPwm1Example()
     //
     // Set Compare values
     //
-    EPwm1Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);    // Set compare A value
+    EPwm1Regs.CMPA.half.CMPA = 0;    // Set compare A value (from 0 to 449)
 
     //
     // Set actions
@@ -108,12 +108,12 @@ void InitEPwm1Example()
     //
     // Start by increasing CMPA & CMPB
     //
-    epwm1_info.EPwm_CMPA_Direction = EPWM_CMP_UP;
-    epwm1_info.EPwm_CMPB_Direction = EPWM_CMP_UP;
-    epwm1_info.EPwmTimerIntCount = 0;      // Zero the interrupt counter
-    epwm1_info.EPwmRegHandle = &EPwm1Regs; //Set the pointer to the ePWM module
-    epwm1_info.EPwmMaxCMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);  // Setup min/max CMPA/CMPB values
-    epwm1_info.EPwmMinCMPA = 0;
+//    epwm1_info.EPwm_CMPA_Direction = EPWM_CMP_UP;
+//    epwm1_info.EPwm_CMPB_Direction = EPWM_CMP_UP;
+//    epwm1_info.EPwmTimerIntCount = 0;      // Zero the interrupt counter
+//    epwm1_info.EPwmRegHandle = &EPwm1Regs; //Set the pointer to the ePWM module
+//    epwm1_info.EPwmMaxCMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);  // Setup min/max CMPA/CMPB values
+//    epwm1_info.EPwmMinCMPA = 0;
 }
 
 void InitEPwm2Example(int Soc_position)
@@ -141,12 +141,6 @@ void InitEPwm2Example(int Soc_position)
 
     EPwm2Regs.ETPS.bit.SOCAPRD = 1;     // Generate pulse on 1st event
 
-    // already declared above
-
-    //    EPwm1Regs.CMPA.half.CMPA = 0x0080;    // Set compare A value
-    //    EPwm1Regs.TBPRD = 0xFFFF;           // Set period for ePWM1 // 0xFFFF is 65535
-    //
-
     //
     // Setup shadow register load on ZERO
     //
@@ -155,10 +149,8 @@ void InitEPwm2Example(int Soc_position)
     EPwm2Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
     EPwm2Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;
 
-    //
-    // Set Compare values
-    //
-    EPwm2Regs.CMPA.half.CMPA = EPWM2_TIMER_TBPRD/2;    // Set compare A value
+    //set sampling PWM (EPWM 2) to 50%
+        EPwm2Regs.CMPA.half.CMPA = (EPWM2_TIMER_TBPRD/2);
 
     //
     // Set actions
@@ -187,10 +179,6 @@ void InitEPwm2Example(int Soc_position)
 //    epwm2_info.EPwmRegHandle = &EPwm1Regs; //Set the pointer to the ePWM module
 //    epwm2_info.EPwmMaxCMPA = EPWM2_TIMER_TBPRD/2;  // Setup min/max CMPA/CMPB values
 //    epwm2_info.EPwmMinCMPA = 0;
-
-    //set sampling PWM (EPWM 2) to 50%
-    EPwm2Regs.CMPA.half.CMPA = (EPWM2_TIMER_TBPRD/2);
-
 }
 
 void InitEPwm3Example()
@@ -204,7 +192,7 @@ void InitEPwm3Example()
     //EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP; // Count up
     EPwm3Regs.TBPRD = EPWM1_TIMER_TBPRD;       // Set timer period
     EPwm3Regs.TBCTL.bit.PHSEN = TB_ENABLE;    // Disable phase loading
-    EPwm3Regs.TBPHS.half.TBPHS = ((EPWM1_TIMER_TBPRD/2));       // Phase is 0
+    EPwm3Regs.TBPHS.half.TBPHS = ((EPWM1_TIMER_TBPRD/2));       // Phase is shifted by 180 degrees
     EPwm3Regs.TBCTR = 0x0000;                  // Clear counter
 
     EPwm3Regs.TBCTL.bit.SYNCOSEL = TB_CTR_ZERO; //An attempt to implement synchronization
@@ -224,7 +212,7 @@ void InitEPwm3Example()
     // Set Compare values
     //
 
-    EPwm3Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);    // Set compare A value
+    EPwm3Regs.CMPA.half.CMPA = 0;    // Set compare A value (from 0 to 449)
 
     //
     // Set actions
@@ -272,7 +260,7 @@ void InitEPwm4Example()
     //
     // Set Compare values
     //
-    EPwm4Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);    // Set compare A value
+    EPwm4Regs.CMPA.half.CMPA = 0;    // Set compare A value (from 0 to 449)
 
     //
     // Set actions
@@ -296,7 +284,7 @@ void InitEPwm5Example()
     //EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP; // Count up
     EPwm5Regs.TBPRD = EPWM1_TIMER_TBPRD;       // Set timer period
     EPwm5Regs.TBCTL.bit.PHSEN = TB_ENABLE;    // Disable phase loading
-    EPwm5Regs.TBPHS.half.TBPHS = ((EPWM1_TIMER_TBPRD/2));       // Phase is 0
+    EPwm5Regs.TBPHS.half.TBPHS = ((EPWM1_TIMER_TBPRD/2));       // Phase is 180
     EPwm5Regs.TBCTR = 0x0000;                  // Clear counter
 
     EPwm5Regs.TBCTL.bit.SYNCOSEL = TB_CTR_ZERO; //An attempt to implement synchronization
@@ -316,7 +304,7 @@ void InitEPwm5Example()
     // Set Compare values
     //
 
-    EPwm5Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);    // Set compare A value
+    EPwm5Regs.CMPA.half.CMPA = 0;    // Set compare A value (from 0 to 449)
 
     //
     // Set actions
@@ -325,15 +313,6 @@ void InitEPwm5Example()
     EPwm5Regs.AQCTLA.bit.CAU = AQ_CLEAR;    // Clear PWM1A on event A, up count
     EPwm5Regs.AQCTLB.bit.ZRO = AQ_SET;      // Set PWM1B on Zero
     EPwm5Regs.AQCTLB.bit.CBU = AQ_CLEAR;    // Clear PWM1B on event B, up count
-
-    // copied
-    //
-//    epwm1_info.EPwm_CMPA_Direction = EPWM_CMP_UP;
-//    epwm1_info.EPwm_CMPB_Direction = EPWM_CMP_UP;
-//    epwm1_info.EPwmTimerIntCount = 0;      // Zero the interrupt counter
-//    epwm1_info.EPwmRegHandle = &EPwm1Regs; //Set the pointer to the ePWM module
-//    epwm1_info.EPwmMaxCMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);  // Setup min/max CMPA/CMPB values
-//    epwm1_info.EPwmMinCMPA = 0;
 }
 
       //
@@ -346,25 +325,12 @@ void
      // Every 1st interrupt, change the CMPA/CMPB values
      //
 
-    EPwm1Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);
-    EPwm3Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);
-    EPwm4Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);
-    EPwm5Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND);
-
-    //commmented out on purpose. uncomment when voltage read in is valuable
-//
-//     if (Voltage1 < 1950){
-//        EPwm1Regs.CMPA.half.CMPA = Voltage1;
-//        EPwm2Regs.CMPA.half.CMPA = Voltage1;
-//     }
-//     else{
-//         EPwm1Regs.CMPA.half.CMPA = (EPWM2_TIMER_TBPRD/2);
-//         EPwm2Regs.CMPA.half.CMPA = (EPWM2_TIMER_TBPRD/2);
-//     }
-
-     return;
+    EPwm1Regs.CMPA.half.CMPA = (((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND)*pulse_width);
+    EPwm3Regs.CMPA.half.CMPA = (((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND)*pulse_width);
+    EPwm4Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND*pulse_width);
+    EPwm5Regs.CMPA.half.CMPA = (((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND)*pulse_width);
+    return;
 }
-
 
 // function to select gpio for sampling flag
 void
