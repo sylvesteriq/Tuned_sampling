@@ -95,7 +95,7 @@ void Gpio_select(void); // function to select GPIO, user added
  EPWM_INFO epwm4_info;
  EPWM_INFO epwm5_info;
 
-volatile float pulse_width = 1;
+volatile float pulse_width = 0.3;
 volatile int register_sinx;
 volatile int register_cosx;
 

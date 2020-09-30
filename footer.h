@@ -327,7 +327,7 @@ void
 
     EPwm1Regs.CMPA.half.CMPA = (((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND)*pulse_width);
     EPwm3Regs.CMPA.half.CMPA = (((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND)*pulse_width);
-    EPwm4Regs.CMPA.half.CMPA = ((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND*pulse_width);
+    EPwm4Regs.CMPA.half.CMPA = (((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND)*pulse_width);
     EPwm5Regs.CMPA.half.CMPA = (((EPWM1_TIMER_TBPRD/2)-PWM_DEAD_BAND)*pulse_width);
     return;
 }
